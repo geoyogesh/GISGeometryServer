@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Project Geometries (Geometry)</title>
+</head>
+<body>
+<form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Input Spatial Reference:
+            </td>
+            <td>
+                <input name="inSR" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Output Spatial Reference:
+            </td>
+            <td>
+                <input name="outSR" value="" type="text"/>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Geometries:
+            </td>
+            <td>
+                <textarea name="geometries" rows="20" cols="50"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input value="Project" type="submit"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
