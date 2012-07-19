@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Relation Operation (Geometry)</title>
+</head>
+<body>
+    <form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Spatial Reference (WKID):
+            </td>
+            <td>
+                <input type="text" value="" name="sr">
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Geometries1:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="geometries1"></textarea>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Geometries2:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="geometries2"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Relation:
+            </td>
+            <td>
+                <select name="relation">
+                    <option selected="true" value="esriGeometryRelationRelation">Relation Relation</option>
+                    <option value="esriGeometryRelationOverlap">Overlap</option>
+                    <option value="esriGeometryRelationCross">Cross</option>
+                    <option value="esriGeometryRelationLineCoincidence">Line Coincidence</option>
+                    <option value="esriGeometryRelationTouch">Relation Touch</option>
+                    <option value="esriGeometryRelationLineTouch">Line Touch</option>
+                    <option value="esriGeometryRelationPointTouch">Point Touch</option>
+                    <option value="esriGeometryRelationWithin">Within</option>
+                    <option value="esriGeometryRelationIn">In</option>
+                    <option value="esriGeometryRelationInteriorIntersection">Interior Intersection</option>
+                    <option value="esriGeometryRelationIntersection">Intersection</option>
+                    <option value="esriGeometryRelationDisjoint">Disjoint</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Relation Parameter:
+            </td>
+            <td>
+                <input type="text" value="" name="relationParam">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Compute Relation">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

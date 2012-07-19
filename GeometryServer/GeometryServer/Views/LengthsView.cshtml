@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Lengths (Geometry)</title>
+</head>
+<body>
+    <form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Spatial Reference (WKID):
+            </td>
+            <td>
+                <input type="text" value="" name="sr/">
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Polylines:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="polylines"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Length Unit (WKID):
+            </td>
+            <td>
+                <input type="text" value="" name="lengthUnit"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Geodesic:
+            </td>
+            <td>
+                <input type="radio" value="true" name="geodesic"/>True
+                <input type="radio" checked="true" value="false" name="geodesic"/>False
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Compute Lengths"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

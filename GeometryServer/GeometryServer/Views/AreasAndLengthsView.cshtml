@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Area And Length (Geometry)</title>
+</head>
+<body>
+<form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Spatial Reference:
+            </td>
+            <td>
+                <input name="sr" value="" type="text"/>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Polygons:
+            </td>
+            <td>
+                <textarea name="polygons" rows="20" cols="50"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Length Unit (WKID):
+            </td>
+            <td>
+                <input name="lengthUnit" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Area Unit:
+            </td>
+            <td>
+                <input name="areaUnit" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input value="Compute Areas And Lengths" type="submit"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

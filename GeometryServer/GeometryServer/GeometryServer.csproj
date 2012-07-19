@@ -91,7 +91,34 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\GeometryService.cs" />
+    <Compile Include="Geometry\Envelope.cs" />
+    <Compile Include="Geometry\Geometry.cs" />
+    <Compile Include="Geometry\MultiPoint.cs" />
+    <Compile Include="Geometry\Point.cs" />
+    <Compile Include="Geometry\PointCollection.cs" />
+    <Compile Include="Geometry\Polygon.cs" />
+    <Compile Include="Geometry\Polyline.cs" />
+    <Compile Include="Geometry\Result.cs" />
+    <Compile Include="Geometry\SpatialReference.cs" />
+    <Compile Include="Modules\BufferModule.cs" />
+    <Compile Include="Modules\AreasAndLengthsModule.cs" />
+    <Compile Include="Modules\TrimExtendModule.cs" />
+    <Compile Include="Modules\OffsetModule.cs" />
+    <Compile Include="Modules\ReshapeModule.cs" />
+    <Compile Include="Modules\ConvexHullModule.cs" />
+    <Compile Include="Modules\AutoCompleteModule.cs" />
+    <Compile Include="Modules\GeneralizeModule.cs" />
+    <Compile Include="Modules\DifferenceModule.cs" />
+    <Compile Include="Modules\CutModuleModule.cs" />
+    <Compile Include="Modules\UnionModule.cs" />
+    <Compile Include="Modules\IntersectModule.cs" />
+    <Compile Include="Modules\DistanceModule.cs" />
+    <Compile Include="Modules\DensifyModule.cs" />
+    <Compile Include="Modules\RelationModule.cs" />
+    <Compile Include="Modules\LabelPointsModule.cs" />
+    <Compile Include="Modules\LengthsModule.cs" />
+    <Compile Include="Modules\SimplifyModule.cs" />
+    <Compile Include="Modules\RootModule.cs" />
     <Compile Include="Modules\ProjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,13 +130,66 @@
     <Content Include="Views\GeometryService.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Images\" />
     <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ProjectView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConvexHullView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ReshapeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AutoCompleteView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GeneralizeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OffsetView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TrimExtendView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CutView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DifferenceView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IntersectView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnionView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DistanceView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DensifyView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RelationView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LabelPointsView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LengthsView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreasAndLengthsView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BufferView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SimplifyView.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -7,11 +7,8 @@ namespace GeometryServer.Modules
     public class ProjectModule : NancyModule
     {
         public ProjectModule()
-            : base("/rest/services/Geometry/GeometryServer")
+            : base("GeometryServer")
         {
-            //http://localhost:13775/rest/services/Geometry/GeometryServer/project?inSR=4326&outSR=102113&&geometries={%0D%0A"geometryType"%3A"esriGeometryPoint"%2C%0D%0A"geometries"%3A[{"x"%3A-117%2C"y"%3A34}]%0D%0A}
-
-
             Get["/project"] = parameters =>
             {
                 int inSR;

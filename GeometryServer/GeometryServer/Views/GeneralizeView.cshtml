@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Generalize (Geometry)</title>
+</head>
+<body>
+    <form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Spatial Reference:
+            </td>
+            <td>
+                <input type="text" value="" name="sr"/>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Geometries:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="geometries"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Maximum Deviation:
+            </td>
+            <td>
+                <input type="text" value="" name="maxDeviation"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Deviation Unit (WKID):
+            </td>
+            <td>
+                <input type="text" value="" name="deviationUnit"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Generalize"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

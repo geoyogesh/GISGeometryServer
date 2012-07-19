@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>AutoComplete (Geometry)</title>
+</head>
+<body>
+    <form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Spatial Reference:
+            </td>
+            <td>
+                <input type="text" value="" name="sr"/>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Polygons:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="polygons"></textarea>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Completion Lines:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="polylines"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="AutoComplete"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

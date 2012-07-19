@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Project Geometries (Geometry)</title>
+</head>
+<body>
+<form action="" method="get">
+    <table>
+        <tr valign="top">
+            <td>
+                Geometries:
+            </td>
+            <td>
+                <textarea name="geometries" rows="20" cols="50"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Input Spatial Reference:
+            </td>
+            <td>
+                <input name="inSR" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Output Spatial Reference:
+            </td>
+            <td>
+                <input name="outSR" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Buffer Spatial Reference:
+            </td>
+            <td>
+                <input name="bufferSR" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Buffer Distance:
+            </td>
+            <td>
+                <input name="distances" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Distance Unit (WKID):
+            </td>
+            <td>
+                <input name="unit" value="" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Union Results:
+            </td>
+            <td>
+                <input type="radio" value="true" name="unionResults"/>True
+                <input type="radio" checked="true" value="false" name="unionResults"/>False 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input value="Buffer" type="submit"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Intersect (Geometry)</title>
+</head>
+<body>
+    <form action="" method="get">
+    <table>
+        <tr>
+            <td>
+                Spatial Reference:
+            </td>
+            <td>
+                <input type="text" value="" name="sr"/>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Input Geometries:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="geometries"></textarea>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Intersect Geometry:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="geometry"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="pjson">JSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Intersect"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
