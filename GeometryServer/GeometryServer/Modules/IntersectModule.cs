@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class IntersectModule : NancyModule
     {
         public IntersectModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/intersect"] = parameters =>
             {
-                return View["IntersectView"];
+                return View["Intersect"];
             };
 
         }

@@ -6,7 +6,7 @@ namespace GeometryServer.Modules
     public class RootModule : NancyModule
     {
         public RootModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/"] = parameters =>
             {

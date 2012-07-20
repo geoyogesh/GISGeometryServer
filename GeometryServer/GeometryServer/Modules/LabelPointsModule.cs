@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class LabelPointsModule : NancyModule
     {
         public LabelPointsModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/labelPoints"] = parameters =>
             {
-                return View["LabelPointsView"];
+                return View["LabelPoints"];
             };
 
         }

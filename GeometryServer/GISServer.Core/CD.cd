@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="GISServer.Core.Geometry.Envelope">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAACAAQAAQAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Envelope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.Geometries">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Geometries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.Geometry" Collapsed="true">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Geometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.MultiPoint" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\MultiPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.Point" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAYAA=</HashCode>
+      <FileName>Geometry\Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.PointCollection">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\PointCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.Polygon" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Polygon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.Polyline" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Polyline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GISServer.Core.Geometry.SpatialReference">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Geometry\SpatialReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

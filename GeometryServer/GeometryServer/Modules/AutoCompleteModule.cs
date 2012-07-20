@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class AutoCompleteModule : NancyModule
     {
         public AutoCompleteModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/autoComplete"] = parameters =>
             {
-                return View["AutoCompleteView"];
+                return View["AutoComplete"];
             };
 
         }

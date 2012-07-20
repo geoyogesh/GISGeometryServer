@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class DensifyModule : NancyModule
     {
         public DensifyModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/densify"] = parameters =>
             {
-                return View["DensifyView"];
+                return View["Densify"];
             };
 
         }

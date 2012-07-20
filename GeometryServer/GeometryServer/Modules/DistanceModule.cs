@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class DistanceModule : NancyModule
     {
         public DistanceModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/distance"] = parameters =>
             {
-                return View["DistanceView"];
+                return View["Distance"];
             };
 
         }

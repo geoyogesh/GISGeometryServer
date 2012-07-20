@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class ReshapeModule : NancyModule
     {
         public ReshapeModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/reshape"] = parameters =>
             {
-                return View["ReshapeView"];
+                return View["Reshape"];
             };
 
         }

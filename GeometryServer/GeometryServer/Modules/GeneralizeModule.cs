@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class GeneralizeModule : NancyModule
     {
         public GeneralizeModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/generalize"] = parameters =>
             {
-                return View["GeneralizeView"];
+                return View["Generalize"];
             };
 
         }

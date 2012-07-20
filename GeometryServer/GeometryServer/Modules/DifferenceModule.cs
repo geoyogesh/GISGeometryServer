@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class DifferenceModule : NancyModule
     {
         public DifferenceModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/difference"] = parameters =>
             {
-                return View["DifferenceView"];
+                return View["Difference"];
             };
 
         }

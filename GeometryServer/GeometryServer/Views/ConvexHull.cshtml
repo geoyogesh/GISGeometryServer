@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<GeometryServer.Models.ConvexHull>
+
+<!doctype html>
 <html>
 <head>
     <title>ConvexHull (Geometry)</title>
@@ -11,7 +13,7 @@
                 Spatial Reference:
             </td>
             <td>
-                <input type="text" value="" name="sr" />
+                <input type="text" value="@Model.SpatialReference" name="sr" />
             </td>
         </tr>
         <tr valign="top">
@@ -19,7 +21,7 @@
                 Geometries:
             </td>
             <td>
-                <textarea cols="50" rows="10" name="geometries"></textarea>
+                <textarea cols="50" rows="10" name="geometries">@Model.InputGeometries</textarea>
             </td>
         </tr>
         <tr>
@@ -40,5 +42,7 @@
         </tr>
     </table>
     </form>
+    <div>@Model.Result</div>
+    <div>@Model.Exception</div>
 </body>
 </html>

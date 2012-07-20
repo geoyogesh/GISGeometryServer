@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeometryServer.Geometry
+namespace GISServer.Core.Geometry
 {
-    public class Result
+    public class Geometries
     {
         public String geometryType { get; set; }
 
         public List<Geometry> geometries { get; set; }
+
+        public SpatialReference spatialReference { get; set; }
     }
 }

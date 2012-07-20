@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeometryServer.Geometry
+namespace GISServer.Core.Geometry
 {
-    public class Polyline : Geometry
+    public class Geometry
     {
-        public List<PointCollection> Paths { get; set; }
+        public Envelope Extent { get; set; }
 
         public SpatialReference SpatialReference { get; set; }
     }

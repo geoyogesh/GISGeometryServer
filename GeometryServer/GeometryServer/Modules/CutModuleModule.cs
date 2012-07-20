@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class CutModuleModule : NancyModule
     {
         public CutModuleModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/cut"] = parameters =>
             {
-                return View["CutView"];
+                return View["Cut"];
             };
 
         }

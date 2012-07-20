@@ -7,32 +7,42 @@ namespace GeometryServer.Modules
     public class ProjectModule : NancyModule
     {
         public ProjectModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/project"] = parameters =>
             {
-                int inSR;
+                int inSR, outSR;
+                string geometries,format;
+
+                #region Required Parameter
+                
                 if (Request.Query["inSR"].Value != null)
                 {
                     inSR = Convert.ToInt32(Request.Query["inSR"].Value);
                 }
-                int outSR;
+
                 if (Request.Query["outSR"].Value != null)
                 {
                     outSR = Convert.ToInt32(Request.Query["outSR"].Value);
                 }
 
-                string geometries;
+                
                 if (Request.Query["geometries"].Value != null)
                 {
                     geometries = Request.Query["geometries"].Value;
                 }
+                #endregion
 
-                string format;
+                #region Optional Parameter
                 if (Request.Query["f"].Value != null)
                 {
                     format = Request.Query["f"].Value;
                 }
+                else
+                {
+                    format = "HTML";
+                }
+                #endregion
 
 
 
@@ -49,7 +59,7 @@ namespace GeometryServer.Modules
 
                 //return "Welcome to geometry service";
                 //return View["First"];
-                return View["ProjectView"];
+                return View["Project"];
 
             };
 

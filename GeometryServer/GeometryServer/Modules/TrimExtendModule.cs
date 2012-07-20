@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class TrimExtendModule : NancyModule
     {
         public TrimExtendModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/trimextend"] = parameters =>
             {
-                return View["TrimExtendView"];
+                return View["TrimExtend"];
             };
 
         }

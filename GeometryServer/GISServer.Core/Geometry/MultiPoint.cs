@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeometryServer.Geometry
+namespace GISServer.Core.Geometry
 {
-    public class Geometry
+    public class MultiPoint:Geometry
     {
-        public Envelope Extent { get; set; }
+        public List<Point> Points { get; set; }
 
         public SpatialReference SpatialReference { get; set; }
     }

@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class BufferModule : NancyModule
     {
         public BufferModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/buffer"] = parameters =>
             {
-                return View["BufferView"];
+                return View["Buffer"];
             };
 
         }

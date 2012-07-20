@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class AreasAndLengthsModule : NancyModule
     {
         public AreasAndLengthsModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/areasandlengths"] = parameters =>
             {
-                return View["AreasAndLengthsView"];
+                return View["AreasAndLengths"];
             };
 
         }

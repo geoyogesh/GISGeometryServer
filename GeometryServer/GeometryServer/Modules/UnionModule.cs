@@ -7,11 +7,11 @@ namespace GeometryServer.Modules
     public class UnionModule : NancyModule
     {
         public UnionModule()
-            : base("GeometryServer")
+            : base("/rest/services/Geometry/GeometryServer/")
         {
             Get["/union"] = parameters =>
             {
-                return View["UnionView"];
+                return View["Union"];
             };
 
         }
