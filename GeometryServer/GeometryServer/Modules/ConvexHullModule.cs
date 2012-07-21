@@ -21,7 +21,7 @@ namespace GeometryServer.Modules
 
                 if (Request.Query["sr"].Value != null)
                 {
-                    model.SpatialReference= Convert.ToInt32(Request.Query["sr"].Value);
+                    model.SpatialReference = Convert.ToInt32(Request.Query["sr"].Value);
                 }
 
                 if (Request.Query["geometries"].Value != null)
@@ -41,10 +41,17 @@ namespace GeometryServer.Modules
                 }
                 #endregion
 
-                var result =GetGeometry(model);
+                
 
-                model.Result = JsonConvert.SerializeObject(result);
-                //ComputeConvexHull();
+                var inputgeom = Services.Utilities.GetGeometries(model.InputGeometries);
+
+                var convexpolygon = Services.Compute.ConvexHull(inputgeom);
+
+                var gispolygon = Services.Utilities.GeoGISGeometries(convexpolygon);
+
+                model.Result = Services.Utilities.getJSON(gispolygon);
+
+                
 
                 if (model.Format.Equals("HTML"))
                 {
@@ -56,56 +63,6 @@ namespace GeometryServer.Modules
                 }
             };
 
-        }
-
-        private GISServer.Core.Geometry.Geometries GetGeometry(Models.ConvexHull model)
-        {
-            var c = new List<DotSpatial.Topology.Coordinate>();
-
-            
-            JObject o = JObject.Parse(model.InputGeometries);
-
-            string geometrytype= (string)o["geometryType"];
-            JArray geometries = (JArray)o["geometries"];
-
-            for (int i = 0; i < geometries.Count; i++)
-            {
-                var p=geometries[i].ToObject<GISServer.Core.Geometry.Point>();
-                c.Add(new DotSpatial.Topology.Coordinate(p.X, p.Y));
-            }
-
-            var mutiPoint = new DotSpatial.Topology.MultiPoint(c);
-            var convexHull = (DotSpatial.Topology.Polygon)mutiPoint.ConvexHull();
-
-
-            var ring = new GISServer.Core.Geometry.PointCollection();
-
-            foreach (var item in convexHull.Coordinates)
-	{
-		  ring.Add(new GISServer.Core.Geometry.Point( item.X,item.Y));
-	}
-
-            var gp = new GISServer.Core.Geometry.Polygon();
-            gp.Rings = new System.Collections.ObjectModel.ObservableCollection<PointCollection>();
-            gp.Rings.Add(ring);
-
-            GISServer.Core.Geometry.Geometries result = new Geometries();
-            var listgeom = new List<GISServer.Core.Geometry.Geometry>();
-            listgeom.Add(gp);
-            result.geometries = listgeom;
-            return result;
-        }
-
-        private static void ComputeConvexHull()
-        {
-            var c = new DotSpatial.Topology.Coordinate[50];
-            Random rnd = new Random();
-            for (int i = 0; i < 50; i++)
-            {
-                c[i] = new DotSpatial.Topology.Coordinate((rnd.Next(0, 50) + 360) - 90, (rnd.NextDouble() * 360) - 180);
-            }
-            var mutiPoint = new DotSpatial.Topology.MultiPoint(c);
-            var convexHull = (DotSpatial.Topology.Polygon)mutiPoint.ConvexHull();
         }
     }
 }

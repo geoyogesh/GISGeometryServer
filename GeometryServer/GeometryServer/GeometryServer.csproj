@@ -119,7 +119,8 @@
     <Compile Include="Modules\RootModule.cs" />
     <Compile Include="Modules\ProjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ToGISServerPolygon.cs" />
+    <Compile Include="Services\Compute.cs" />
+    <Compile Include="Services\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

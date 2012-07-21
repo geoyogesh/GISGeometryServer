@@ -7,6 +7,24 @@ namespace GISServer.Core.Geometry
 {
     public class Envelope
     {
+        public Envelope()
+        {
+        }
+        public Envelope(double XMin, double YMin, double XMax, double YMax)
+        {
+            this.XMin = XMin;
+            this.YMin = YMin;
+            this.XMax = XMax;
+            this.YMax = YMax;
+        }
+        public Envelope(double XMin, double YMin, double XMax, double YMax, SpatialReference SpatialReference)
+        {
+            this.XMin = XMin;
+            this.YMin = YMin;
+            this.XMax = XMax;
+            this.YMax = YMax;
+            this.SpatialReference = SpatialReference;
+        }
         public double XMin { get; set; }
 
         public double YMin { get; set; }
