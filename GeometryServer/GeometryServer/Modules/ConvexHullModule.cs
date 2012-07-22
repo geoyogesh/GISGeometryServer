@@ -49,9 +49,19 @@ namespace GeometryServer.Modules
 
                 var gispolygon = Services.Utilities.GeoGISGeometries(convexpolygon);
 
-                model.Result = Services.Utilities.getJSON(gispolygon);
 
-                
+                switch (model.Format)
+                {
+                    case "json":
+                        model.Result = Services.Utilities.getJSON(gispolygon);
+                        break;
+                    case "pjson":
+                        model.Result = Services.Utilities.getPJSON(gispolygon);
+                        break;
+                    default:
+                        model.Result = Services.Utilities.getPJSON(gispolygon);
+                        break;
+                }
 
                 if (model.Format.Equals("HTML"))
                 {

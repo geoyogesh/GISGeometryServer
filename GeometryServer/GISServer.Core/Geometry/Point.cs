@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace GISServer.Core.Geometry
 {
@@ -37,11 +38,10 @@ namespace GISServer.Core.Geometry
             this.SpatialReference = new SpatialReference(WKT);
         }
 
-
         public Double X { get; set; }
-
+        
         public double Y { get; set; }
-
+        
         public SpatialReference SpatialReference { get; set; }
     }
 }

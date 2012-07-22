@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.Xml.Serialization;
 
 namespace GeometryServer.Services
 {
@@ -175,7 +177,24 @@ namespace GeometryServer.Services
         {
             if (Geometry is GISServer.Core.Geometry.Geometry)
             {
-                return JsonConvert.SerializeObject(Geometry);
+                return JsonConvert.SerializeObject(Geometry, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            }
+            return null;
+        }
+        public static string getPJSON(dynamic Geometry)
+        {
+            if (Geometry is GISServer.Core.Geometry.Geometry)
+            {
+                return JsonConvert.SerializeObject(Geometry, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            }
+            return null;
+        }
+        public static string getXML(dynamic Geometry)
+        {
+            if (Geometry is GISServer.Core.Geometry.Geometry)
+            {
+                XmlSerializer serializer = new XmlSerializer(Geometry.GetType());
+                return null;
             }
             return null;
         }

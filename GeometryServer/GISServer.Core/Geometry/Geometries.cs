@@ -7,10 +7,10 @@ namespace GISServer.Core.Geometry
 {
     public class Geometries
     {
-        public String geometryType { get; set; }
+        public String GeometryType { get; set; }
 
         public List<Geometry> geometries { get; set; }
 
-        public SpatialReference spatialReference { get; set; }
+        public SpatialReference SpatialReference { get; set; }
     }
 }
