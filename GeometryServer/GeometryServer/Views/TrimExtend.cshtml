@@ -6,47 +6,84 @@
 <body>
     <form action="" method="get">
     <table>
-       <tr>
-<td>Spatial Reference: </td>
-<td><input type="text" value="" name="sr"/></td>
-</tr>
-<tr valign="top">
-<td>Geometries:</td>
-<td><textarea cols="50" rows="10" name="geometries"></textarea></td>
-</tr>
-<tr>
-<td>Offset Distance:</td>
-<td><input type="text" value="" name="offsetDistance"/></td>
-</tr>
-<tr>
-<td>Offset Unit:</td>
-<td><input type="text" value="" name="offsetUnit"/></td>
-</tr>
-<tr>
-<td>Offset How:</td>
-<td>
-<select name="offsetHow">
-<option value="esriGeometryOffsetMitered">esriGeometryOffsetMitered</option>
-<option value="esriGeometryOffsetBevelled">esriGeometryOffsetBevelled</option>
-<option value="esriGeometryOffsetRounded">esriGeometryOffsetRounded</option>
-</select>
-</td>
-</tr>
-<tr>
-<td>Bevel Ratio:</td>
-<td><input type="text" value="" name="bevelRatio"></td>
-</tr>
-<tr>
-<td>Simplify Result: </td>
-<td>
-<input type="radio" value="true" name="simplifyResult"/>True
-<input type="radio" checked="true" value="false" name="simplifyResult"/>False</td>
-</tr>
-<tr>
-<td>Format:</td>
-<td><select name="f"><option>HTML</option> <option value="pjson">JSON</option> </select></td>
-</tr>
-<tr><td colspan="2"><input type="submit" value="Offset"/></td></tr>
+        <tr>
+            <td>
+                Spatial Reference:
+            </td>
+            <td>
+                <input type="text" value="" name="sr" />
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+                Geometries:
+            </td>
+            <td>
+                <textarea cols="50" rows="10" name="geometries"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Offset Distance:
+            </td>
+            <td>
+                <input type="text" value="" name="offsetDistance" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Offset Unit:
+            </td>
+            <td>
+                <input type="text" value="" name="offsetUnit" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Offset How:
+            </td>
+            <td>
+                <select name="offsetHow">
+                    <option value="esriGeometryOffsetMitered">esriGeometryOffsetMitered</option>
+                    <option value="esriGeometryOffsetBevelled">esriGeometryOffsetBevelled</option>
+                    <option value="esriGeometryOffsetRounded">esriGeometryOffsetRounded</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Bevel Ratio:
+            </td>
+            <td>
+                <input type="text" value="" name="bevelRatio">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Simplify Result:
+            </td>
+            <td>
+                <input type="radio" value="true" name="simplifyResult" />True
+                <input type="radio" checked="true" value="false" name="simplifyResult" />False
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Format:
+            </td>
+            <td>
+                <select name="f">
+                    <option>HTML</option>
+                    <option value="json">JSON</option>
+                    <option value="pjson">PJSON</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Offset" />
+            </td>
+        </tr>
     </table>
     </form>
 </body>

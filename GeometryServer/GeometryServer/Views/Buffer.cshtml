@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<GeometryServer.Models.Buffer>
+<!doctype html>
 <html>
 <head>
     <title>Project Geometries (Geometry)</title>
@@ -11,7 +12,7 @@
                 Geometries:
             </td>
             <td>
-                <textarea name="geometries" rows="20" cols="50"></textarea>
+                <textarea name="geometries" rows="20" cols="50">@Model.InputGeometries</textarea>
             </td>
         </tr>
         <tr>
@@ -19,7 +20,7 @@
                 Input Spatial Reference:
             </td>
             <td>
-                <input name="inSR" value="" type="text"/>
+                <input name="inSR" value="@Model.InputSpatialReference" type="text"/>
             </td>
         </tr>
         <tr>
@@ -27,7 +28,7 @@
                 Output Spatial Reference:
             </td>
             <td>
-                <input name="outSR" value="" type="text"/>
+                <input name="outSR" value="@Model.OutputSpatialReference" type="text"/>
             </td>
         </tr>
         <tr>
@@ -35,7 +36,7 @@
                 Buffer Spatial Reference:
             </td>
             <td>
-                <input name="bufferSR" value="" type="text"/>
+                <input name="bufferSR" value="@Model.BufferSpatialReference" type="text"/>
             </td>
         </tr>
         <tr>
@@ -43,7 +44,7 @@
                 Buffer Distance:
             </td>
             <td>
-                <input name="distances" value="" type="text"/>
+                <input name="distances" value="@Model.BufferDistance type="text"/>
             </td>
         </tr>
         <tr>
@@ -51,7 +52,7 @@
                 Distance Unit (WKID):
             </td>
             <td>
-                <input name="unit" value="" type="text"/>
+                <input name="unit" value="@Model.DistanceUnit" type="text"/>
             </td>
         </tr>
         <tr>
@@ -70,7 +71,8 @@
             <td>
                 <select name="f">
                     <option>HTML</option>
-                    <option value="pjson">JSON</option>
+                    <option value="json">JSON</option>
+                    <option value="pjson">PJSON</option>
                 </select>
             </td>
         </tr>
@@ -81,5 +83,7 @@
         </tr>
     </table>
     </form>
+    <div>@Model.Result</div>
+    <div>@Model.Exception</div>
 </body>
 </html>

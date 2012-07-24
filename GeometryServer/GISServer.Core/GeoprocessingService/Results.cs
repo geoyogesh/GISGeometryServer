@@ -7,7 +7,7 @@ namespace GISServer.Core.GeoprocessingService
 {
     public class Results
     {
-        public List<ParameterValue> Results { get; set; }
+        public List<ParameterValue> results { get; set; }
 
         public Messages Messages { get; set; }
     }

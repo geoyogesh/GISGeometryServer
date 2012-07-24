@@ -41,6 +41,9 @@ namespace GeometryServer.Modules
                 }
                 #endregion
 
+                if (model.InputGeometries!=null)
+                {
+                    
                 
 
                 var inputgeom = Services.Utilities.GetGeometries(model.InputGeometries);
@@ -62,6 +65,9 @@ namespace GeometryServer.Modules
                         model.Result = Services.Utilities.getPJSON(gispolygon);
                         break;
                 }
+
+                }
+
 
                 if (model.Format.Equals("HTML"))
                 {
