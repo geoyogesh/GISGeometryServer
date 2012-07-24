@@ -47,7 +47,7 @@ namespace GeometryServer.Modules
 
                 var convexpolygon = Services.Compute.ConvexHull(inputgeom);
 
-                var gispolygon = Services.Utilities.GeoGISGeometries(convexpolygon);
+                var gispolygon = Services.Utilities.GetGISGeometries(convexpolygon);
 
 
                 switch (model.Format)

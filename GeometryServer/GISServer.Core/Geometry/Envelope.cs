@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GISServer.Core.Geometry
 {
-    public class Envelope
+    public class Envelope:Geometry
     {
         public Envelope()
         {

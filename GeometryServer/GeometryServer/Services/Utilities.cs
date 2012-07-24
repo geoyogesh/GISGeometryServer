@@ -99,12 +99,17 @@ namespace GeometryServer.Services
             return null;
         }
 
-        public static dynamic GeoGISGeometries(dynamic Geometry)
+        public static dynamic GetGISGeometries(dynamic Geometry)
         {
+            var geometries = new GISServer.Core.Geometry.Geometries();
+            var geometrieslist = new List<GISServer.Core.Geometry.Geometry>();
             if (Geometry is DotSpatial.Topology.Point)
             {
                 var point = new GISServer.Core.Geometry.Point(Geometry.X, Geometry.Y);
-                return point;
+                geometrieslist.Add(point);
+                geometries.GeometryType = "GeometryPoint";
+                geometries.geometries = geometrieslist;
+                return geometries;
             }
             else if (Geometry is DotSpatial.Topology.MultiPoint)
             {
@@ -115,7 +120,10 @@ namespace GeometryServer.Services
                     var point = new GISServer.Core.Geometry.Point(coordinate.X, coordinate.Y);
                     multipoint.Points.Add(point);
                 }
-                return multipoint;
+                geometrieslist.Add(multipoint);
+                geometries.GeometryType = "GeometryMultipoint";
+                geometries.geometries = geometrieslist;
+                return geometries;
             }
             else if (Geometry is DotSpatial.Topology.MultiLineString)
             {
@@ -132,7 +140,10 @@ namespace GeometryServer.Services
                     }
                     multiline.Paths.Add(pointcollection);
                 }
-                return multiline;
+                geometrieslist.Add(multiline);
+                geometries.GeometryType = "GeometryPolyline";
+                geometries.geometries = geometrieslist;
+                return geometries;
             }
             else if (Geometry is DotSpatial.Topology.Polygon)
             {
@@ -145,8 +156,10 @@ namespace GeometryServer.Services
                     pointcollection.Add(point);
                 }
                 polygon.Rings.Add(pointcollection);
-
-                return polygon;
+                geometrieslist.Add(polygon);
+                geometries.GeometryType = "GeometryPolygon";
+                geometries.geometries = geometrieslist;
+                return geometries;
             }
             else if (Geometry is DotSpatial.Topology.MultiPolygon)
             {
@@ -163,19 +176,111 @@ namespace GeometryServer.Services
                     }
                     polygon.Rings.Add(pointcollection);
                 }
-                return polygon;
+                geometrieslist.Add(polygon);
+                geometries.GeometryType = "GeometryPolygon";
+                geometries.geometries = geometrieslist;
+                return geometries;
             }
-            if (Geometry is DotSpatial.Topology.Envelope)
+            else if (Geometry is DotSpatial.Topology.Envelope)
             {
                 var envelope = new GISServer.Core.Geometry.Envelope(Geometry.Minimum.X, Geometry.Minimum.Y, Geometry.Maximum.X, Geometry.Minimum.Y);
-                return envelope;
+                geometrieslist.Add(envelope);
+                geometries.GeometryType = "GeometryEnvelope";
+                geometries.geometries = geometrieslist;
+                return geometries;
+            }
+            return null;
+        }
+
+        public static dynamic GetGISSingleGeometry(dynamic Geometry)
+        {
+            var singleGeometry = new GISServer.Core.Geometry.SingleGeometry();
+            if (Geometry is DotSpatial.Topology.Point)
+            {
+                var point = new GISServer.Core.Geometry.Point(Geometry.X, Geometry.Y);
+                singleGeometry.GeometryType = "GeometryPoint";
+                singleGeometry.geometry = point;
+                return singleGeometry;
+            }
+            else if (Geometry is DotSpatial.Topology.MultiPoint)
+            {
+                var multipoint = new GISServer.Core.Geometry.MultiPoint();
+                multipoint.Points = new List<GISServer.Core.Geometry.Point>();
+                foreach (var coordinate in Geometry.Coordinates)
+                {
+                    var point = new GISServer.Core.Geometry.Point(coordinate.X, coordinate.Y);
+                    multipoint.Points.Add(point);
+                }
+                singleGeometry.GeometryType = "GeometryMultipoint";
+                singleGeometry.geometry = multipoint;
+                return singleGeometry;
+            }
+            else if (Geometry is DotSpatial.Topology.MultiLineString)
+            {
+                var multiline = new GISServer.Core.Geometry.Polyline();
+                multiline.Paths = new List<GISServer.Core.Geometry.PointCollection>();
+
+                for (int i = 0; i < Geometry.Count; i++)
+                {
+                    var pointcollection = new GISServer.Core.Geometry.PointCollection();
+                    foreach (var coordinate in Geometry[i].Coordinates)
+                    {
+                        var point = new GISServer.Core.Geometry.Point(coordinate.X, coordinate.Y);
+                        pointcollection.Add(point);
+                    }
+                    multiline.Paths.Add(pointcollection);
+                }
+                singleGeometry.GeometryType = "GeometryPolyline";
+                singleGeometry.geometry = multiline;
+                return singleGeometry;
+            }
+            else if (Geometry is DotSpatial.Topology.Polygon)
+            {
+                var polygon = new GISServer.Core.Geometry.Polygon();
+                polygon.Rings = new List<GISServer.Core.Geometry.PointCollection>();
+                var pointcollection = new GISServer.Core.Geometry.PointCollection();
+                foreach (var coordinate in Geometry.Coordinates)
+                {
+                    var point = new GISServer.Core.Geometry.Point(coordinate.X, coordinate.Y);
+                    pointcollection.Add(point);
+                }
+                polygon.Rings.Add(pointcollection);
+                singleGeometry.GeometryType = "GeometryPolygon";
+                singleGeometry.geometry = polygon;
+                return singleGeometry;
+            }
+            else if (Geometry is DotSpatial.Topology.MultiPolygon)
+            {
+                var polygon = new GISServer.Core.Geometry.Polygon();
+                polygon.Rings = new List<GISServer.Core.Geometry.PointCollection>();
+
+                for (int i = 0; i < Geometry.Count; i++)
+                {
+                    var pointcollection = new GISServer.Core.Geometry.PointCollection();
+                    foreach (var coordinate in Geometry[i].Coordinates)
+                    {
+                        var point = new GISServer.Core.Geometry.Point(coordinate.X, coordinate.Y);
+                        pointcollection.Add(point);
+                    }
+                    polygon.Rings.Add(pointcollection);
+                }
+                singleGeometry.GeometryType = "GeometryPolygon";
+                singleGeometry.geometry = polygon;
+                return singleGeometry;
+            }
+            else if (Geometry is DotSpatial.Topology.Envelope)
+            {
+                var envelope = new GISServer.Core.Geometry.Envelope(Geometry.Minimum.X, Geometry.Minimum.Y, Geometry.Maximum.X, Geometry.Minimum.Y);
+                singleGeometry.GeometryType = "GeometryEnvelope";
+                singleGeometry.geometry = envelope;
+                return singleGeometry;
             }
             return null;
         }
 
         public static string getJSON(dynamic Geometry)
         {
-            if (Geometry is GISServer.Core.Geometry.Geometry)
+            if ((Geometry is GISServer.Core.Geometry.Geometries) || (Geometry is GISServer.Core.Geometry.SingleGeometry))
             {
                 return JsonConvert.SerializeObject(Geometry, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new CamelCasePropertyNamesContractResolver() });
             }
@@ -183,20 +288,20 @@ namespace GeometryServer.Services
         }
         public static string getPJSON(dynamic Geometry)
         {
-            if (Geometry is GISServer.Core.Geometry.Geometry)
+            if ((Geometry is GISServer.Core.Geometry.Geometries) || (Geometry is GISServer.Core.Geometry.SingleGeometry))
             {
                 return JsonConvert.SerializeObject(Geometry, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new CamelCasePropertyNamesContractResolver() });
             }
             return null;
         }
-        public static string getXML(dynamic Geometry)
-        {
-            if (Geometry is GISServer.Core.Geometry.Geometry)
-            {
-                XmlSerializer serializer = new XmlSerializer(Geometry.GetType());
-                return null;
-            }
-            return null;
-        }
+        //public static string getXML(dynamic Geometry)
+        //{
+        //    if ((Geometry is GISServer.Core.Geometry.Geometries) || (Geometry is GISServer.Core.Geometry.SingleGeometry))
+        //    {
+        //        XmlSerializer serializer = new XmlSerializer(Geometry.GetType());
+        //        return null;
+        //    }
+        //    return null;
+        //}
     }
 }

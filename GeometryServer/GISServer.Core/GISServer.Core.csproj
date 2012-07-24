@@ -51,6 +51,7 @@
     <Compile Include="Geometry\Polygon.cs" />
     <Compile Include="Geometry\Polyline.cs" />
     <Compile Include="Geometry\Geometries.cs" />
+    <Compile Include="Geometry\SingleGeometry.cs" />
     <Compile Include="Geometry\SpatialReference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
