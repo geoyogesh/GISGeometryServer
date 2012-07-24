@@ -43,6 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeometryService\AreasAndLengths.cs" />
+    <Compile Include="Catalog\Catalog.cs" />
+    <Compile Include="Catalog\Service.cs" />
+    <Compile Include="GeometryService\Cut.cs" />
+    <Compile Include="GeometryService\Distance.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="Exception.cs" />
+    <Compile Include="GeometryService\Url.cs" />
+    <Compile Include="GeoprocessingService\Job.cs" />
+    <Compile Include="GeoprocessingService\LinearUnit.cs" />
+    <Compile Include="GeoprocessingService\Messages.cs" />
+    <Compile Include="GeoprocessingService\Parameter.cs" />
+    <Compile Include="GeoprocessingService\ParameterValue.cs" />
+    <Compile Include="GeoprocessingService\Results.cs" />
+    <Compile Include="GeoprocessingService\Root.cs" />
+    <Compile Include="GeoprocessingService\Task.cs" />
+    <Compile Include="GeoprocessingService\Url.cs" />
     <Compile Include="Geometry\Envelope.cs" />
     <Compile Include="Geometry\Geometry.cs" />
     <Compile Include="Geometry\MultiPoint.cs" />
@@ -53,7 +70,11 @@
     <Compile Include="Geometry\Geometries.cs" />
     <Compile Include="Geometry\SingleGeometry.cs" />
     <Compile Include="Geometry\SpatialReference.cs" />
+    <Compile Include="GeometryService\LabelPoints.cs" />
+    <Compile Include="GeometryService\Lengths.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GeometryService\Relations.cs" />
+    <Compile Include="GeometryService\Root.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -61,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CD.cd" />
+    <None Include="GeometryService\gs.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
