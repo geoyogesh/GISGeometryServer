@@ -3,16 +3,20 @@
 
 namespace GeometryServer.Modules
 {
-    public class RootModule : NancyModule
+    public class RootModule
+        : NancyModule
     {
         public RootModule()
-            : base("/rest/services/Geometry/GeometryServer/")
+            : base("/")
         {
             Get["/"] = parameters =>
             {
-                return View["GeometryService"];
+               return Response.AsRedirect("/rest/services");
             };
-
+            Get["/rest"] = parameters =>
+            {
+                return Response.AsRedirect("/rest/services");
+            };
         }
     }
 }
